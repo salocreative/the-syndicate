@@ -2,7 +2,7 @@
 
 Salo Creative's example landing page for Corn Cobs, built from Jeremy Jacobs's Google Ads brief for The Syndicate Club. Concept, round 8, 10 November 2026.
 
-CONFIDENTIAL. Jeremy asked for his briefs to be kept private. Keep this repository private and inside Salo.
+Jeremy has agreed to this repository being public.
 
 ## What's here
 
