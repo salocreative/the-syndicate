@@ -263,7 +263,7 @@
   "width": 1024,
   "check": "shift",
   "ok": true,
-  "detail": "layout shift 0.001"
+  "detail": "layout shift 0.000"
  },
  {
   "page": "index",

@@ -5,7 +5,10 @@
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
   const save=navigator.connection&&navigator.connection.saveData;
   // Photos: start loading well before the section arrives, so no photo is blank when it's shown
-  if('IntersectionObserver' in window){const pre=new IntersectionObserver(es=>{if(es[0].isIntersecting){sec.querySelectorAll('img[loading="lazy"]').forEach(i=>i.loading='eager');pre.disconnect()}},{rootMargin:'150% 0px'});pre.observe(sec)}
+  // Watching starts once the page has loaded: on a slow first visit the page is still settling before then, and the photos
+  // would load with the first screen for nothing
+  if('IntersectionObserver' in window){const pre=new IntersectionObserver(es=>{if(es[0].isIntersecting){sec.querySelectorAll('img[loading="lazy"]').forEach(i=>i.loading='eager');pre.disconnect()}},{rootMargin:'150% 0px'});
+    const go=()=>pre.observe(sec);if(d.readyState==='complete')go();else addEventListener('load',go,{once:true})}
   // Film
   const v=sec.querySelector('[data-video]'),btn=sec.querySelector('[data-video-toggle]');
   if(v&&!reduce&&!save&&'IntersectionObserver' in window){
@@ -15,25 +18,32 @@
     btn.addEventListener('click',()=>{if(v.paused){user=false;v.play();set(true)}else{user=true;v.pause();set(false)}});
   }
   // Horizontal gallery: on desktop the section holds while the row travels sideways (one transform per frame).
-  // Phones and reduced motion swipe instead.
-  const hz=sec.querySelector('[data-hz]');
-  if(hz&&'IntersectionObserver' in window){
-    const view=hz.querySelector('.sy-hz__view'),track=hz.querySelector('[data-track]'),pics=[...hz.querySelectorAll('[data-hpar]')],mq=matchMedia('(min-width: 901px)');
-    let dist=0,on=false,tick=false,lw=0;
-    const frame=()=>{tick=false;if(!hz.classList.contains('is-pinned'))return;const r=hz.getBoundingClientRect(),span=r.height-innerHeight;
-      const p=Math.max(0,Math.min(1,-r.top/(span||1)));track.style.setProperty('--tx',(-p*dist).toFixed(1)+'px');hz.style.setProperty('--hp',p.toFixed(3));
-      pics.forEach(i=>{const b=i.parentElement.getBoundingClientRect();if(b.right<0||b.left>innerWidth)return;i.style.setProperty('--hx',(((b.left+b.width/2)/innerWidth-.5)*-50).toFixed(1)+'px')})};
-    const ask=()=>{if(on&&!tick){tick=true;requestAnimationFrame(frame)}};
-    const setup=()=>{if(innerWidth===lw)return;lw=innerWidth;const ok=mq.matches&&!reduce;hz.classList.toggle('is-pinned',ok);
-      if(!ok){hz.style.height='';track.style.removeProperty('--tx');return}
-      dist=Math.max(0,track.scrollWidth-view.clientWidth);hz.style.height=(dist+innerHeight)+'px';frame()};
-    new IntersectionObserver(([e])=>{on=e.isIntersecting;ask()},{rootMargin:'20% 0px'}).observe(hz);
-    addEventListener('scroll',ask,{passive:true});addEventListener('resize',setup);setup();
+  // Phones and reduced motion swipe instead. Positions come from the shared frame's cached layout (motion.js), so the
+  // frame only writes: the row's transform, the progress bar and each photo's drift.
+  const hz=sec.querySelector('[data-hz]'),sy=window.sy;
+  if(hz&&sy&&'IntersectionObserver' in window){
+    const view=hz.querySelector('.sy-hz__view'),track=hz.querySelector('[data-track]'),bar=hz.querySelector('.sy-hz__bar i'),
+      pics=[...hz.querySelectorAll('[data-hpar]')].map(el=>({el,v:null})),mq=matchMedia('(min-width: 901px)');
+    let dist=0,on=false,lw=0,pinned=false,lx=null;
+    // Each photo's centre on screen with the row at rest (the row's current transform taken back out)
+    let applied=0;
+    const across=sy.memo(()=>{const tr=track.getBoundingClientRect(),base=tr.left-applied;
+      pics.forEach(p=>{const r=p.el.parentElement.getBoundingClientRect();p.c=base+(r.left-tr.left)+r.width/2})});
+    sy.frame((y,vh,vw)=>{if(!on||!pinned)return null;const b=sy.box(hz),span=b.h-vh,p=Math.max(0,Math.min(1,(y-b.top)/(span||1)));
+      const x=(-p*dist).toFixed(1);if(x===lx)return null;lx=x;across();const out=[];
+      pics.forEach(q=>{const c=q.c+(+x);if(c<-vw/2||c>vw*1.5)return;const v=((c/vw-.5)*-50).toFixed(1);if(v!==q.v){q.v=v;out.push(q)}});
+      return()=>{applied=+x;track.style.transform=`translate3d(${x}px,0,0)`;if(bar)bar.style.setProperty('--hp',p.toFixed(3));out.forEach(q=>q.el.style.setProperty('--hx',q.v+'px'))}});
+    const setup=()=>{if(innerWidth===lw)return;lw=innerWidth;pinned=mq.matches&&!reduce;hz.classList.toggle('is-pinned',pinned);lx=null;
+      if(!pinned){hz.style.height='';track.style.removeProperty('transform');applied=0;return}
+      dist=Math.max(0,track.scrollWidth-view.clientWidth);hz.style.height=(dist+innerHeight)+'px';sy.renew()};
+    new IntersectionObserver(([e])=>{on=e.isIntersecting;sy.ask()},{rootMargin:'20% 0px'}).observe(hz);
+    addEventListener('resize',setup);setup();
   }
   // Card photos ease inside their frames as the page scrolls
-  if(!reduce){const stacks=[...sec.querySelectorAll('.sy-card__stack')];let t2=false;
-    const f2=()=>{t2=false;stacks.forEach(s=>{const b=s.parentElement.getBoundingClientRect();if(b.bottom<0||b.top>innerHeight)return;s.style.setProperty('--py',(((b.top+b.height/2)/innerHeight-.5)*-24).toFixed(1)+'px')})};
-    addEventListener('scroll',()=>{if(!t2){t2=true;requestAnimationFrame(f2)}},{passive:true});f2()}
+  if(!reduce&&sy){const stacks=[...sec.querySelectorAll('.sy-card__stack')].map(el=>({el,v:null}));
+    sy.frame((y,vh)=>{const out=[];stacks.forEach(s=>{const b=sy.box(s.el.parentElement),top=b.top-y;if(top+b.h<0||top>vh)return;
+      const v=(((top+b.h/2)/vh-.5)*-24).toFixed(1);if(v!==s.v){s.v=v;out.push(s)}});
+      return out.length?()=>out.forEach(s=>s.el.style.setProperty('--py',s.v+'px')):null})}
   // Card photos
   sec.querySelectorAll('[data-cycle]').forEach(card=>{
     const imgs=[...card.querySelectorAll('.sy-card__stack img')],dots=[...card.querySelectorAll('.sy-card__dots i')];if(imgs.length<2)return;

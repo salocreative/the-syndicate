@@ -11,7 +11,7 @@ for(const pg of pages){const per={};
   for(const w of VPS){const m=w<720;const p=await b.newPage({viewport:{width:w,height:w>2000?1440:900},isMobile:m,hasTouch:m});
     await p.route('**/maps**',r=>r.abort());await p.goto(base+pg+'.html');await p.waitForTimeout(1200);
     const list=await p.evaluate(()=>{const seen={};return [...document.querySelectorAll('img')].map(i=>{const s=i.getAttribute('src')||'';if(!s.includes('site-images/'))return null;
-      const k=s.replace(/^.*?site-images\//,'site-images/').replace(/-\d+\.webp$/,'.webp');seen[k]=(seen[k]||0)+1;
+      const k=s.replace(/^.*?site-images\//,'site-images/').replace(/-\d{3,4}\.webp$/,'.webp');seen[k]=(seen[k]||0)+1;
       const r=i.getBoundingClientRect(),cs=getComputedStyle(i),ar=(+i.getAttribute('width')||i.naturalWidth||1)/(+i.getAttribute('height')||i.naturalHeight||1);
       /* object-fit: cover draws the photo wider than its box when the box is taller than the photo (a full-height frame on a phone) */
       const h=i.offsetHeight||r.height;   /* layout height, so a box scaled to 0 for its reveal still counts */
