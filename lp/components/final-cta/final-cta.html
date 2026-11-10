@@ -1,0 +1,51 @@
+<section class="sy-final sy-dark" data-section="final-cta" data-label="Final call to action">
+  <picture class="sy-final__bg" aria-hidden="true"><source media="(max-width: 719px)" data-phone="site-images/hero/links-dunes-sunset.webp"><img src="../site-images/hero/links-dunes-sunset.webp" alt="" width="2400" height="1602" loading="lazy" data-parallax=".25" data-edit="final-photo"></picture>
+  <img class="sy-water sy-final__water" src="../assets/logo/syndicate-logo-mark-white-lg.webp" alt="" width="644" height="643" loading="lazy" aria-hidden="true" data-spin=".3">
+  <div class="sy-wrap sy-final__in">
+    <img class="sy-mark" src="../assets/logo/syndicate-logo-mark-white.webp" alt="" width="240" height="240" loading="lazy" data-rv="scale">
+    <h2 class="sy-h2 sy-rule sy-center" id="ff-head" data-split-words data-edit="final-title">Request your membership details</h2>
+    <p class="sy-final__line" data-rv style="--i:1" data-edit="final-line">Tell us a little about you and your golf. You can download our Membership and Course Access Guide as soon as you submit, and we will come back to you within one working day.</p>
+    <div class="sy-final__form" id="enquire" data-rv style="--i:2">
+<!--@form-->
+<form class="sy-form" data-form action="/thank-you" novalidate aria-labelledby="ff-head" data-edit="ff-form">
+  <div class="sy-form__seg" aria-hidden="true"><i></i><i></i></div>
+  
+  <div class="sy-form__body">
+  <p class="sy-sr" aria-live="polite" data-step-label>Step 1 of 2</p>
+  <div class="sy-step" data-step-panel="1">
+    <div class="sy-form__grid">
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-first">First name</label><span class="sy-ctl"><input id="ff-first" name="first_name" autocomplete="given-name" required aria-describedby="ff-first-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-first-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-last">Last name</label><span class="sy-ctl"><input id="ff-last" name="last_name" autocomplete="family-name" required aria-describedby="ff-last-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-last-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-email">Email</label><span class="sy-ctl"><input id="ff-email" name="email" type="email" autocomplete="email" required aria-describedby="ff-email-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-email-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-mobile">Mobile</label><span class="sy-ctl"><input id="ff-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="ff-mobile-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-mobile-e" hidden></span></div>
+    </div>
+    <div class="sy-form__actions">
+      <button class="sy-btn sy-btn--light sy-btn--block sy-form__go" type="button" data-next>Continue<svg class="sy-btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+  <div class="sy-step" data-step-panel="2">
+    <div class="sy-form__grid">
+      <div class="sy-field sy-field--full" data-field><fieldset class="sy-radios" aria-describedby="ff-hcp-e"><legend class="sy-field__label">Do you hold an official playing handicap?</legend>
+        <div class="sy-radios__set"><label class="sy-radio"><input type="radio" name="handicap" value="Yes" required><span>Yes</span></label><label class="sy-radio"><input type="radio" name="handicap" value="No"><span>No</span></label><label class="sy-radio"><input type="radio" name="handicap" value="Applying for one"><span>Applying for one</span></label></div>
+      </fieldset><span class="sy-field__err" id="ff-hcp-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-rounds">Roughly how many rounds do you play a year?</label><span class="sy-ctl"><select id="ff-rounds" name="rounds" required aria-describedby="ff-rounds-e"><option value="">Choose</option><option>Under 15</option><option>15 to 30</option><option>30 to 50</option><option>Over 50</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-rounds-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-budget">What annual budget do you have in mind for a golf membership?</label><span class="sy-ctl"><select id="ff-budget" name="budget" required aria-describedby="ff-budget-e"><option value="">Choose</option><option>Under £2,000</option><option>£2,000 to £4,000</option><option>£4,000 to £7,000</option><option>Over £7,000</option><option>Prefer to discuss</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-budget-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-where">Where are you based?</label><span class="sy-ctl"><input id="ff-where" name="location" required placeholder="Postcode or nearest town" aria-describedby="ff-where-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="ff-where-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="ff-cat">Which membership interests you? <span class="sy-field__opt">Optional</span></label><span class="sy-ctl"><select id="ff-cat" name="membership"><option value="">Choose</option><option>Full</option><option>Country</option><option>Overseas</option><option>Corporate</option><option>Not sure yet</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" hidden></span></div>
+      <div class="sy-field sy-field--full" data-field><label class="sy-field__label" for="ff-more">Anything else we should know? <span class="sy-field__opt">Optional</span></label><span class="sy-ctl"><textarea id="ff-more" name="notes" rows="2" maxlength="300"></textarea><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" hidden></span></div>
+      <div class="sy-field sy-field--full" data-field><label class="sy-check"><input type="checkbox" name="consent" value="yes" required aria-describedby="ff-consent-e"><span>I am happy for The Syndicate Club to contact me about membership. <a href="https://www.thesyndicateclub.co.uk/privacypolicy" target="_blank" rel="noopener">Privacy policy</a></span></label><span class="sy-field__err" id="ff-consent-e" hidden></span></div>
+    </div>
+    <input type="hidden" name="gclid"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="landing_page"><input type="hidden" name="referrer">
+    <div class="sy-form__actions">
+      <button class="sy-btn sy-btn--light sy-btn--block sy-form__go" type="submit">Send my enquiry<svg class="sy-btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="sy-form__back" type="button" data-back><svg class="sy-form__back-i" aria-hidden="true"><use href="#i-arrow"/></svg>Back to step 1</button>
+    </div>
+  </div>
+  <p class="sy-form__note" data-edit="ff-form-note">No obligation. Your details are never passed to anyone else.</p>
+  </div>
+</form>
+<!--@/form-->
+    </div>
+    <p class="sy-final__alt" data-rv data-edit="final-alt">Or call the membership team on <a href="tel:+442034420696" data-call>+44 (0) 203 442 0696</a></p>
+  </div>
+</section>

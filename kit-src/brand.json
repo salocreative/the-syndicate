@@ -1,0 +1,79 @@
+{
+ "brand": "The Syndicate Club",
+ "wordmark": "THE SYNDICATE",
+ "strapline": "",
+ "slug": "syndicate",
+ "year": "2026",
+ "web": "thesyndicateclub.co.uk",
+ "mode": "reference",
+ "palette": [
+  {
+   "name": "Navy",
+   "hex": "#2A3649",
+   "use": "Headings, text, panels, buttons"
+  },
+  {
+   "name": "Second navy",
+   "hex": "#324158",
+   "use": "FAQ text, panels on navy"
+  },
+  {
+   "name": "Cream",
+   "hex": "#FEFAF0",
+   "use": "Warm sections"
+  },
+  {
+   "name": "Black",
+   "hex": "#000000",
+   "use": "Panels behind the ring mark"
+  },
+  {
+   "name": "White",
+   "hex": "#FFFFFF",
+   "use": "Page, text on navy"
+  }
+ ],
+ "ink": "#2A3649",
+ "ink_name": "Syndicate navy",
+ "neutral": {},
+ "accents": [
+  {
+   "id": "navy",
+   "name": "Navy",
+   "hex": "#2A3649"
+  }
+ ],
+ "accent_default": "navy",
+ "accent_status": "final",
+ "radius": "0px",
+ "fonts": {
+  "display": {
+   "name": "Jost",
+   "file": "/home/claude/syndicate/raw/jost/jost-latin.woff2",
+   "weights": "300 700"
+  },
+  "body": {
+   "name": "Jost",
+   "file": "/home/claude/syndicate/raw/jost/jost-latin.woff2",
+   "weights": "300 700"
+  }
+ },
+ "icons": {
+  "style": "Sharp",
+  "names": [
+   "arrow_forward",
+   "call",
+   "check",
+   "close",
+   "download",
+   "expand_more",
+   "menu",
+   "open_in_new"
+  ]
+ },
+ "templates": {},
+ "signature": {
+  "address": "",
+  "terms": ""
+ }
+}

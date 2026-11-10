@@ -1,0 +1,42 @@
+/* Hero: copy left (55%), form right (45%), over a still photograph of a partner course (brief: one static image).
+   Clean and quiet: one headline in their style (bold capitals with a light second line, as on their homepage), a short
+   subhead, three ticks. The form is a frosted glass panel on the photo. The photo eases a little as the page scrolls. */
+.sy-hero{position:relative;isolation:isolate;color:var(--white);background:var(--navy-deep);overflow:clip;padding:calc(var(--logo-h) + var(--s-8)) 0 var(--s-8)}
+.sy-hero__bg{position:absolute;inset:0;z-index:-3;overflow:hidden}
+.sy-hero__bg picture,.sy-hero__img{width:100%;height:100%}
+.sy-hero__img{object-fit:cover;object-position:50% 60%;animation:sy-hero-in var(--t-hero) var(--ease-out) both}
+@keyframes sy-hero-in{from{opacity:.2}to{opacity:1}}
+.sy-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:var(--shade-hero)}
+.sy-hero::before{content:"";position:absolute;inset:auto 0 0;height:40%;z-index:-1;background:var(--shade-foot)}
+.sy-hero__grid{display:grid;grid-template-columns:minmax(0,55fr) minmax(0,45fr);gap:clamp(2rem,1rem + 4vw,6rem);align-items:center;min-height:calc(100svh - var(--logo-h) - var(--s-8) * 2)}
+.sy-hero__eyebrow{display:flex;align-items:center;gap:var(--s-3);font-size:var(--fs-label);font-weight:var(--w-med);letter-spacing:var(--track-eyebrow);text-transform:uppercase;margin-bottom:var(--s-5);color:var(--on-dark-soft)}
+.sy-hero__eyebrow::before{content:"";width:var(--s-6);height:var(--hair);background:currentColor;transform-origin:left;transition:transform var(--t-reveal) var(--ease-out) var(--t-mid)}
+.sy-js .sy-hero__eyebrow:not(.is-in)::before{transform:scaleX(0)}
+.sy-hero__title{font-size:var(--fs-h1);line-height:1.06;font-weight:var(--w-bold);letter-spacing:.01em;text-transform:uppercase;text-wrap:balance;max-width:15ch}
+.sy-hero__title b,.sy-hero__title b .sy-split__i{font-weight:var(--w-bold)}
+.sy-hero__title>span:not([data-split]):not(.sy-sr),.sy-hero__title .sy-lt{font-weight:var(--w-light)}
+.sy-hero__sub{font-size:var(--fs-body);line-height:1.65;margin-top:var(--s-5);max-width:46ch;color:var(--on-dark-soft);font-weight:var(--w-light)}
+.sy-hero__ticks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-5);margin-top:var(--s-7);padding:0;max-width:36rem}
+.sy-hero__ticks li{display:flex;align-items:flex-start;gap:var(--s-2);font-size:var(--fs-small);line-height:1.45;letter-spacing:.02em}
+.sy-hero__ticks li .sy-hero__tick{margin-top:var(--hair)}
+.sy-hero__tick{width:var(--s-4);height:var(--s-4);flex:none;color:var(--white)}
+.sy-hero__form{max-width:var(--form-w);justify-self:end;width:100%;position:relative;z-index:2}
+.sy-js .sy-hero [data-rv="right"]:not(.is-in){transform:translate3d(calc(var(--rise) * 1.5),0,0)}
+.sy-hero__cue{position:absolute;left:50%;bottom:0;width:var(--s-7);height:var(--s-8);margin-left:calc(var(--s-7) / -2);display:block;color:var(--white)}
+.sy-hero__cue span{position:absolute;left:50%;top:0;bottom:var(--s-4);width:var(--hair);background:var(--on-dark-line);overflow:hidden}
+.sy-hero__cue span::after{content:"";position:absolute;left:0;top:0;width:100%;height:40%;background:var(--white);animation:sy-cue var(--t-hero) var(--ease-io) infinite}
+@keyframes sy-cue{0%{transform:translate3d(0,-100%,0)}100%{transform:translate3d(0,250%,0)}}
+@media (max-width:980px){
+  .sy-hero{padding-top:calc(var(--logo-h-m) + var(--s-8))}
+  .sy-hero::after{background:var(--shade-hero-m)}
+  .sy-hero__grid{grid-template-columns:minmax(0,1fr);min-height:0;gap:var(--s-5)}
+  .sy-hero__form{justify-self:stretch;max-width:none}
+  /* Phones: the form sits straight under the headline and subhead, the ticks move below it */
+  .sy-hero__copy{display:contents}
+  .sy-hero__eyebrow{order:1;margin-bottom:0}
+  .sy-hero__title{order:2;max-width:none}
+  .sy-hero__sub{order:3;margin-top:0}
+  .sy-hero__form{order:4}
+  .sy-hero__ticks{order:5;margin-top:var(--s-2);grid-template-columns:minmax(0,1fr);gap:var(--s-3)}
+  .sy-hero__cue{display:none}
+}

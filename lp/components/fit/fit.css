@@ -1,0 +1,28 @@
+/* Is this right for you: two columns (brief). The yes side sits over one of their heathland photographs under a navy shade,
+   which eases as you scroll; its ticks draw in. The no side is quiet cream with grey crosses. Ticks and crosses draw in quickly,
+   one after another; a yes line leans in when you point at it. Honest, and a little more visual. */
+.sy-fit__title{margin-bottom:var(--s-8)}
+.sy-fit__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.sy-fit__col{position:relative;isolation:isolate;overflow:hidden;padding:clamp(2rem,1rem + 3vw,4rem)}
+.sy-fit__col--yes{background:var(--navy);color:var(--white)}
+.sy-fit__bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.sy-fit__bg img{width:100%;height:100%;object-fit:cover}
+.sy-fit__col--yes::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--shade-fit)}
+.sy-fit__col--no{background:var(--cream);color:var(--n-700)}
+.sy-fit__h{font-size:var(--fs-small);font-weight:var(--w-bold);margin-bottom:var(--s-6);text-transform:uppercase;letter-spacing:var(--track-label)}
+.sy-fit__col--no .sy-fit__h{color:var(--navy)}
+.sy-fit__list{display:grid;gap:0;padding:0}
+.sy-fit__list li{position:relative;display:grid;grid-template-columns:var(--s-7) minmax(0,1fr);gap:var(--s-4);align-items:center;padding-block:var(--s-4);border-bottom:var(--hair) solid var(--on-dark-line);font-size:var(--fs-body);line-height:1.45;transition:transform var(--t-mid) var(--ease)}
+.sy-fit__col--no .sy-fit__list li{border-bottom-color:var(--n-200)}
+.sy-fit__list li:last-child{border-bottom:0}
+.sy-fit__mk{width:var(--s-7);height:var(--s-7);padding:var(--s-2);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;border:var(--hair) solid var(--on-dark-line-2);transition:background-color var(--t-mid) var(--ease),color var(--t-mid) var(--ease)}
+.sy-fit__col--no .sy-fit__mk{color:var(--n-500);border-color:var(--n-200)}
+.sy-fit__list span{position:relative;justify-self:start}
+@media (hover:hover){
+  .sy-fit__col--yes .sy-fit__list li:hover{transform:translate3d(var(--s-2),0,0)}
+  .sy-fit__col--yes .sy-fit__list li:hover .sy-fit__mk{background:var(--white);color:var(--navy)}
+}
+@media (max-width:860px){.sy-fit__grid{grid-template-columns:minmax(0,1fr)}}
+/* Quicker marks: each tick or cross draws in 500ms, 80ms after the one before */
+.sy-js .sy-fit [data-draw] :is(path){transition-duration:var(--t-fit);transition-delay:calc(var(--i,0) * var(--stagger-fit))}
+.sy-js .sy-fit__list li{transition-duration:var(--t-slow);transition-delay:calc(var(--i,0) * var(--stagger-fit))}

@@ -1,0 +1,16 @@
+/* Four ways to join: four narrow cards in a row, all on screen at once (brief): title and one line, no prices, no buttons.
+   Simple: each card rises in a moment after the one before, and its photo eases a little as the page scrolls. */
+.sy-cats__title{margin-bottom:var(--s-8)}
+.sy-cats__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4);padding:0;margin:0}
+.sy-cats__card{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:var(--cat-ratio);display:flex;align-items:flex-end;color:var(--white);background:var(--navy)}
+.sy-cats__ph{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.sy-cats__ph img{width:100%;height:100%;object-fit:cover}
+.sy-cats__card::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--shade-card)}
+.sy-cats__txt{padding:var(--s-5);display:grid;gap:var(--s-2)}
+.sy-cats__n{font-size:var(--fs-label);letter-spacing:var(--track-label);color:var(--on-dark-soft)}
+.sy-cats__h{font-size:var(--fs-cat);font-weight:var(--w-bold);text-transform:uppercase;line-height:1}
+.sy-cats__h::after{content:"";display:block;width:var(--s-6);height:var(--hair);background:var(--white);margin-top:var(--s-3)}
+.sy-cats__txt p{color:var(--on-dark-soft);font-size:var(--fs-small);line-height:1.55}
+.sy-cats__line{text-align:center;margin-top:var(--s-7);color:var(--n-700)}
+@media (max-width:900px){.sy-cats__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.sy-cats__grid{gap:var(--s-3)}.sy-cats__txt{padding:var(--s-4)}}

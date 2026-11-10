@@ -1,0 +1,6 @@
+/* Footer: one line, small grey text, centred. No menu, no social icons, no newsletter (brief) */
+.sy-footer{background:var(--white);color:var(--n-500);padding-block:var(--s-6);border-top:var(--hair) solid var(--n-100)}
+.sy-footer__in{text-align:center;font-size:var(--fs-note);line-height:1.8}
+.sy-footer a{color:inherit;text-underline-offset:.2em}
+@media (hover:hover){.sy-footer a:hover{color:var(--navy)}}
+@media (max-width:720px){.sy-footer{padding-bottom:calc(var(--bar-h-m) + var(--s-6))}}

@@ -1,0 +1,21 @@
+/* Buttons, in their style: square, capitals, widely tracked. Navy solid on light, white on dark, outline as the quiet option.
+   A glint sweeps across on hover; on a mouse, buttons lean towards the pointer (motion.js, data-magnetic). */
+.sy-btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:var(--s-3);min-height:var(--btn-h);padding:0 var(--s-6);border:var(--hair) solid var(--navy);border-radius:var(--radius);font-size:var(--fs-btn);font-weight:var(--w-med);letter-spacing:var(--track-btn);text-transform:uppercase;text-decoration:none;cursor:pointer;background:var(--navy);color:var(--white);transform:translate3d(var(--mx,0),var(--my,0),0);transition:background-color var(--t-mid) var(--ease),color var(--t-mid) var(--ease),box-shadow var(--t-mid) var(--ease),transform var(--t-mid) var(--ease)}
+.sy-btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--glint);transform:translate3d(-120%,0,0);transition:transform var(--t-slow) var(--ease-out)}
+.sy-btn:active{transform:translate3d(var(--mx,0),calc(var(--my,0px) + var(--hair)),0)}
+.sy-btn[disabled]{opacity:.55;cursor:not-allowed}
+.sy-btn--block{width:100%}
+.sy-btn--light{background:var(--white);border-color:var(--white);color:var(--navy)}
+.sy-btn--line{background:transparent;color:var(--navy)}
+.sy-btn--line-light{background:transparent;border-color:var(--white);color:var(--white)}
+.sy-btn__arrow{width:var(--arrow);height:var(--arrow);transition:transform var(--t-mid) var(--ease)}
+@media (hover:hover){
+  .sy-btn:hover{background:var(--navy-deep);border-color:var(--navy-deep);box-shadow:var(--shadow-lift)}
+  .sy-btn:hover::before{transform:translate3d(120%,0,0)}
+  .sy-btn--light:hover{background:var(--cream);border-color:var(--cream);color:var(--navy)}
+  .sy-btn--line:hover{background:var(--navy);color:var(--white)}
+  .sy-btn--line-light:hover{background:var(--white);color:var(--navy)}
+  .sy-btn:hover .sy-btn__arrow{transform:translateX(var(--s-1))}
+}
+.sy-link{color:inherit;font-weight:var(--w-med);text-underline-offset:.25em;text-decoration-thickness:var(--hair)}
+@media (hover:hover){.sy-link:hover{text-decoration-thickness:var(--rule)}}

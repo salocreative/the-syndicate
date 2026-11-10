@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The Syndicate Club homepage concept</title>
+<link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Starter homepage for the Concept review tab. At stage 4, replace this file with the approved stage 3 homepage from the website repo.
+     Contract: every section carries data-section (a short id) and data-label (its name in the review panel), the accent block stays,
+     assets use ../assets/, the gate script below stays at the end of <head>, and review.js stays at the end of <body>. -->
+<script>
+/* Concept gate: opened on its own, this page sends people to the password screen first */
+(()=>{try{if(window.parent===window&&localStorage.getItem('syndicate-cr')!=='1')location.replace('../concept-review.html')}catch(_){}})();
+</script>
+<style>
+/*@tokens start*/
+:root{
+  --n-0:#FFFFFF; --n-25:#FBFBFB; --n-50:#F4F5F6; --n-100:#EAEBED; --n-200:#D4D7DB; --n-300:#BFC3C8;
+  --n-400:#AAAFB6; --n-450:#949AA4; --n-500:#717782; --n-600:#6A7280; --n-700:#555E6D; --n-750:#4A5464;
+  --n-800:#3F4A5B; --n-850:#3A4557; --n-900:#2E3A4D; --n-950:#2A3649; --n-990:#1D2532;
+  --n-950-rgb:42 54 73;
+  --bad:#E5322D; --bad-bg:#FCEBEA; --bad-ink:#8E1E1A;
+  --acc:#0C5E79; --acc-ink:#0C5E79; --acc-ink3:#0C5E79;
+  --radius:4px;
+  --display:'Brand Display', Arial, Helvetica, sans-serif;
+  --body:'Brand Body', Arial, Helvetica, sans-serif;
+  --icons:'Brand Icons';
+}
+@font-face{font-family:'Brand Display';font-style:normal;font-weight:300 700;font-display:swap;src:url(../assets/fonts/display.woff2) format('woff2')}
+@font-face{font-family:'Brand Body';font-style:normal;font-weight:300 700;font-display:swap;src:url(../assets/fonts/body.woff2) format('woff2')}
+@font-face{font-family:'Brand Icons';font-style:normal;font-weight:300;font-display:block;src:url(../assets/fonts/icons.woff2) format('woff2')}
+/*@tokens end*/
+
+/* Accent options. --acc fills, --acc-ink is 4.5:1 on white, --acc-ink3 is 3:1 on white. Text on the accent is always --n-950. */
+/*@accents start*/
+:root[data-accent="teal"]{--acc:#0C5E79;--acc-ink:#0C5E79;--acc-ink3:#0C5E79}
+/*@accents end*/
+
+:root{--gutter:max(16px, 4vw);--ease:cubic-bezier(.2,.7,.2,1);--max:1320px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--n-0);color:var(--n-950);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--n-950);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--n-600)}
+.hl{background:linear-gradient(transparent 62%,var(--acc) 62%)}
+.btn{--fg:var(--n-950);--bgc:transparent;display:inline-flex;align-items:stretch;height:44px;color:var(--fg);background:var(--bgc);text-decoration:none;font:400 15px/1 var(--body);border-radius:var(--radius);cursor:pointer;border:0;padding:0;transition:opacity .2s}
+.btn .lbl{display:flex;align-items:center;padding:0 16px;border:1px solid var(--fg);border-radius:var(--radius) 0 0 var(--radius);white-space:nowrap}
+.btn .box{width:44px;display:grid;place-items:center;border:1px solid var(--fg);border-left:0;border-radius:0 var(--radius) var(--radius) 0;transition:background-color .2s var(--ease)}
+.btn .arr{width:20px;height:20px;transform:rotate(0deg);transition:transform .2s var(--ease),color .2s;color:var(--fg)}
+.btn.light{--fg:var(--n-0)}
+.btn.dark{--fg:var(--n-950)}
+.btn.accent{--fg:var(--n-950);--bgc:var(--acc)}
+.btn:hover .box,.btn:focus-visible .box,.btn.is-hover .box,.btn.is-focus .box{background:var(--fg)}
+.btn:hover .arr,.btn:focus-visible .arr,.btn.is-hover .arr,.btn.is-focus .arr{transform:rotate(45deg)}
+.btn.light:hover .arr,.btn.light:focus-visible .arr,.btn.light.is-hover .arr,.btn.light.is-focus .arr{color:var(--n-950)}
+.btn.dark:hover .arr,.btn.dark:focus-visible .arr,.btn.dark.is-hover .arr,.btn.dark.is-focus .arr{color:var(--n-0)}
+.btn.accent:hover .arr,.btn.accent:focus-visible .arr,.btn.accent.is-hover .arr,.btn.accent.is-focus .arr{color:var(--acc)}
+.btn:focus-visible,.btn.is-focus{outline:2px solid var(--fg);outline-offset:3px}
+.btn.accent:focus-visible,.btn.accent.is-focus{outline-color:var(--n-950)}
+.btn.light:focus-visible,.btn.light.is-focus{outline-color:var(--acc)}
+.btn:active,.btn.is-pressed{transform:translateY(1px)}
+.btn:active .box,.btn.is-pressed .box{background:var(--fg)}
+
+/* Site header */
+.site-head{position:sticky;top:0;z-index:10;background:var(--n-0);border-bottom:1px solid var(--n-100)}
+.site-head .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.site-head img{width:96px;height:auto}
+.site-nav{display:flex;gap:28px;margin-left:auto;font-size:15px}
+.site-nav a{text-decoration:none}
+.site-nav a:hover{text-decoration:underline}
+@media (max-width:900px){.site-nav{display:none}.site-head .btn{margin-left:auto}}
+
+/* Sections */
+.hero{background:var(--n-950);color:var(--n-0)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:80px}
+.hero h1{font-size:clamp(44px,6.4vw,96px)}
+.hero p{max-width:34ch;margin:24px 0 32px;color:var(--n-200);font-size:19px}
+.hero img{width:100%;aspect-ratio:4/5;max-height:72vh;object-fit:cover;border-radius:var(--radius)}
+.intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;padding-block:112px}
+.intro h2,.cta h2{font-size:clamp(32px,4vw,56px)}
+.intro p{margin-top:20px;max-width:52ch}
+.intro img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius)}
+.services{background:var(--n-50)}
+.services .wrap{padding-block:96px}
+.services h2,.work h2{font-size:clamp(28px,3vw,44px);margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.cards article{background:var(--n-0);padding:32px;min-height:240px;display:flex;flex-direction:column;gap:12px;border-radius:var(--radius)}
+.cards h3{font-size:24px}
+.cards span{font:600 14px/1 var(--display);color:var(--n-600)}
+.figures .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-block:96px;border-bottom:1px solid var(--n-100)}
+.figures b{display:block;font:600 clamp(48px,6vw,88px)/1 var(--display)}
+.figures p{margin-top:8px;color:var(--n-600)}
+.work .wrap{padding-block:96px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.grid a{text-decoration:none;display:grid;gap:12px}
+.grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.grid h3{font-size:22px}
+.cta{background:var(--acc)}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;padding-block:88px}
+.site-foot{background:var(--n-950);color:var(--n-300);font-size:14px}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:40px}
+@media (max-width:900px){
+  .hero .wrap,.intro .wrap{grid-template-columns:minmax(0,1fr);padding-block:64px;gap:32px}
+  .cards,.figures .wrap,.grid{grid-template-columns:minmax(0,1fr)}
+  .cta .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arr" viewBox="0 0 24 24"><path d="M6.29425 17.6443L5.25 16.6L15.0905 6.75H6.14425V5.25H17.6443V16.75H16.1443V7.80375L6.29425 17.6443Z" fill="currentColor"/></symbol></defs></svg>
+<header class="site-head" data-section="header" data-label="Header"><div class="wrap">
+  <img src="../assets/logo/syndicate-primary-black.svg" alt="The Syndicate Club" width="96" height="38">
+  <nav class="site-nav" aria-label="Main"><a href="#work">[[Page 1]]</a><a href="#services">[[Page 2]]</a><a href="#about">[[Page 3]]</a></nav>
+  <a class="btn dark" href="#contact"><span class="lbl">[[Contact us]]</span><span class="box"><svg class="arr" aria-hidden="true" focusable="false"><use href="#i-arr"/></svg></span></a>
+</div></header>
+<main>
+  <section class="hero" data-section="hero" data-label="Hero"><div class="wrap">
+    <div><h1>[[Headline from the copy doc]]</h1><p>[[One line on what the client does, for whom]]</p>
+      <a class="btn accent" href="#work"><span class="lbl">[[See our work]]</span><span class="box"><svg class="arr" aria-hidden="true" focusable="false"><use href="#i-arr"/></svg></span></a></div>
+    <img src="../assets/website/photos/photo-1.webp" alt="[[Describe the photo]]" width="800" height="1000">
+  </div></section>
+  <section class="intro" id="about" data-section="intro" data-label="Introduction"><div class="wrap">
+    <div><p class="eyebrow">[[Eyebrow]]</p><h2>[[Intro headline with one <span class="hl">highlighted</span> phrase]]</h2><p>[[Two or three sentences from the copy doc]]</p></div>
+    <img src="../assets/website/photos/photo-2.webp" alt="[[Describe the photo]]" width="900" height="600" loading="lazy">
+  </div></section>
+  <section class="services" id="services" data-section="services" data-label="Services"><div class="wrap">
+    <h2>[[Services heading]]</h2>
+    <div class="cards">
+      <article><span>01</span><h3>[[Service 1]]</h3><p>[[One line]]</p></article>
+      <article><span>02</span><h3>[[Service 2]]</h3><p>[[One line]]</p></article>
+      <article><span>03</span><h3>[[Service 3]]</h3><p>[[One line]]</p></article>
+    </div>
+  </div></section>
+  <section class="figures" data-section="figures" data-label="Figures"><div class="wrap">
+    <div><b>[[0]]</b><p>[[What the figure counts, from the evidence list]]</p></div>
+    <div><b>[[0]]</b><p>[[What the figure counts]]</p></div>
+    <div><b>[[0]]</b><p>[[What the figure counts]]</p></div>
+  </div></section>
+  <section class="work" id="work" data-section="work" data-label="Featured work"><div class="wrap">
+    <h2>[[Work heading]]</h2>
+    <div class="grid">
+      <a href="#work"><img src="../assets/website/photos/photo-3.webp" alt="[[Project 1 photo]]" width="800" height="600" loading="lazy"><h3>[[Project 1]]</h3></a>
+      <a href="#work"><img src="../assets/website/photos/photo-4.webp" alt="[[Project 2 photo]]" width="800" height="600" loading="lazy"><h3>[[Project 2]]</h3></a>
+    </div>
+  </div></section>
+  <section class="cta" id="contact" data-section="cta" data-label="Call to action"><div class="wrap">
+    <h2>[[Closing line]]</h2>
+    <a class="btn dark" href="#contact"><span class="lbl">[[Start a project]]</span><span class="box"><svg class="arr" aria-hidden="true" focusable="false"><use href="#i-arr"/></svg></span></a>
+  </div></section>
+</main>
+<footer class="site-foot" data-section="footer" data-label="Footer"><div class="wrap"><span>The Syndicate Club</span><span>thesyndicateclub.co.uk</span></div></footer>
+<script src="review.js" defer></script>
+</body>
+</html>

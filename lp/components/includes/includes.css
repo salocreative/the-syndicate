@@ -1,0 +1,17 @@
+/* What membership includes: six blocks, three across, one per row on phones. Line icon, bold title, one line (brief).
+   No hover. Each block builds with its own position on screen: as it rises from the foot of the screen its large number
+   lifts into place, the rule above it draws across and the icon draws itself. Scroll back and it unwinds.
+   includes.js sets --p (0 to 1) per block, once per frame. Without script or with reduced motion, --p is 1. */
+.sy-includes__title{margin-bottom:var(--s-8)}
+.sy-includes__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-8) var(--s-7);padding:0}
+.sy-includes__item{--q:var(--p,1);position:relative;display:grid;align-content:start;gap:var(--s-3);padding-top:var(--s-5);color:var(--n-700)}
+.sy-includes__item::before{content:"";position:absolute;left:0;top:0;width:100%;height:var(--hair);background:var(--n-200)}
+.sy-includes__item::after{content:"";position:absolute;left:0;top:calc(var(--hair) * -1);width:100%;height:var(--rule);background:var(--navy);transform-origin:left;transform:scaleX(var(--q))}
+.sy-includes__n{display:block;font-size:var(--fs-inc);line-height:1;font-weight:var(--w-light);letter-spacing:-.02em;color:var(--navy);clip-path:inset(calc((1 - var(--q)) * 100%) 0 0 0);transform:translate3d(0,calc((1 - var(--q)) * var(--s-5)),0)}
+.sy-includes__item .sy-icon{position:absolute;top:var(--s-6);right:0;width:var(--mark-sm);height:var(--mark-sm);color:var(--navy)}
+.sy-includes__item .sy-icon :is(path,circle,ellipse,rect,line,polyline){stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--q))}
+.sy-includes__h{margin-top:var(--s-3);font-size:var(--fs-h3);font-weight:var(--w-bold);color:var(--navy);line-height:var(--lh-head);text-transform:uppercase;letter-spacing:.08em}
+.sy-includes__item p{font-size:var(--fs-small);line-height:1.7;max-width:36ch}
+@media (max-width:900px){.sy-includes__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.sy-includes__grid{grid-template-columns:minmax(0,1fr);gap:var(--s-7)}}
+@media (prefers-reduced-motion:reduce){.sy-includes__item{--q:1}}

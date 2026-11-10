@@ -1,0 +1,891 @@
+[
+ {
+  "page": "all css",
+  "width": "-",
+  "check": "values",
+  "ok": true,
+  "detail": "0 changed: "
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "churn",
+  "ok": true,
+  "detail": "5 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 14227px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 375,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "churn",
+  "ok": true,
+  "detail": "5 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 14126px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 390,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "churn",
+  "ok": true,
+  "detail": "7 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 11501px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 768,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "churn",
+  "ok": true,
+  "detail": "6 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.001"
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 12611px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 1024,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "churn",
+  "ok": true,
+  "detail": "6 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "frames",
+  "ok": true,
+  "detail": "0 frames over 50ms"
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 12741px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "churn",
+  "ok": true,
+  "detail": "8 class changes a second while scrolling"
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "frames",
+  "ok": true,
+  "detail": "0 frames over 50ms"
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.001"
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 14075px, baseline undefinedpx"
+ },
+ {
+  "page": "index",
+  "width": 2560,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 943px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 375,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 943px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 390,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 1040px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 768,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 1024px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 1024,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "frames",
+  "ok": true,
+  "detail": "0 frames over 50ms"
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 900px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "preload",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "images",
+  "ok": true,
+  "detail": "0 not loaded in view: "
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "images-sharp",
+  "ok": true,
+  "detail": "drawn wider than file: "
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "churn",
+  "ok": true,
+  "detail": "0 class changes a second while scrolling"
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "frames",
+  "ok": true,
+  "detail": "0 frames over 50ms"
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "overflow",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "centring",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "shift",
+  "ok": true,
+  "detail": "layout shift 0.000"
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "timers",
+  "ok": true,
+  "detail": "spotlight changed slide after Infinityms"
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "height",
+  "ok": true,
+  "detail": "page height 1440px, baseline undefinedpx"
+ },
+ {
+  "page": "thank-you",
+  "width": 2560,
+  "check": "console",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "page": "index",
+  "width": 1440,
+  "check": "reduced-motion",
+  "ok": true,
+  "detail": "hidden: "
+ },
+ {
+  "page": "thank-you",
+  "width": 1440,
+  "check": "reduced-motion",
+  "ok": true,
+  "detail": "hidden: "
+ }
+]

@@ -1,0 +1,17 @@
+/* FAQs: an accordion, all closed by default, in the brief's order. Opens and closes smoothly (faq.js); works without script */
+.sy-faq__in{max-width:calc(var(--measure) + var(--s-9) + var(--gutter) * 2)}
+.sy-faq__title{margin-bottom:var(--s-7)}
+.sy-faq__list{border-top:var(--hair) solid var(--n-200)}
+.sy-faq__item{position:relative;border-bottom:var(--hair) solid var(--n-200)}
+.sy-faq__item::after{content:"";position:absolute;left:0;right:0;bottom:calc(var(--hair) * -1);height:var(--hair);background:var(--navy);transform-origin:left;transform:scaleX(0);transition:transform var(--t-slow) var(--ease-out)}
+.sy-faq__item[open]::after{transform:scaleX(1)}
+@media (hover:hover){.sy-faq__item:hover::after{transform:scaleX(1)}}
+.sy-faq__q{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);padding:var(--s-5) 0;font-size:var(--fs-h3);font-weight:var(--w-med);line-height:var(--lh-head);cursor:pointer;list-style:none;transition:padding var(--t-mid) var(--ease)}
+.sy-faq__q::-webkit-details-marker{display:none}
+.sy-faq__icon{width:var(--s-7);height:var(--s-7);padding:var(--s-3);flex:none;color:var(--navy);border:var(--hair) solid var(--n-200);transition:transform var(--t-mid) var(--ease),background-color var(--t-mid) var(--ease),color var(--t-mid) var(--ease),border-color var(--t-mid) var(--ease)}
+.sy-faq__item[open] .sy-faq__icon{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.sy-faq__item[open] .sy-faq__icon{transform:rotate(45deg)}
+.sy-faq__a{overflow:hidden}
+.sy-faq__a p{padding:0 var(--s-8) var(--s-5) 0;color:var(--n-700)}
+@media (hover:hover){.sy-faq__q:hover{padding-left:var(--s-3)}}
+@media (max-width:600px){.sy-faq__a p{padding-right:0}.sy-faq__q{font-size:var(--fs-body)}}

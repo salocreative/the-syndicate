@@ -1,0 +1,87 @@
+/* The Syndicate Club, landing page tokens. Every colour, size, space and timing lives here.
+   Colours, type and button style are copied from thesyndicateclub.co.uk (computed styles, 9 November 2026). Jost is SIL OFL. */
+@font-face{font-family:"Jost";src:url("../assets/fonts/jost-latin.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+:root{
+  /* Their colours */
+  --navy:#2A3649;          /* their main colour: sections, headings, text, buttons */
+  --navy-2:#324158;        /* their second navy: FAQ text, panels on navy */
+  --navy-deep:#1F2837;     /* navy at 75% for the deepest bands */
+  --black:#000000;         /* their black panels behind the logo mark */
+  --cream:#FEFAF0;         /* their warm background */
+  --white:#FFFFFF;
+  /* Tints of their navy (navy mixed with white) */
+  --n-50:#F4F5F7;--n-100:#E6E8EC;--n-200:#CDD1D8;--n-300:#A9AFBA;--n-500:#6A7383;--n-700:#454F60;
+  --err:#B42318;
+  --shade-hero:linear-gradient(90deg,rgba(23,30,42,.88) 0%,rgba(23,30,42,.64) 50%,rgba(23,30,42,.3) 100%);
+  --shade-foot:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55));
+  --shade-hero-m:linear-gradient(180deg,rgba(23,30,42,.55) 0%,rgba(23,30,42,.84) 55%,rgba(23,30,42,.94) 100%);
+  --shade-band:linear-gradient(180deg,rgba(23,30,42,.72),rgba(23,30,42,.9));
+  --shade-fit:linear-gradient(160deg,rgba(23,30,42,.78),rgba(23,30,42,.9));
+  --shade-fs:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.6) 100%);
+  --shade-intro:linear-gradient(90deg,rgba(14,19,28,.85) 0%,rgba(14,19,28,.55) 50%,rgba(14,19,28,.25) 100%);
+  --glass:linear-gradient(140deg,rgba(255,255,255,.17) 0%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.09) 100%),rgba(16,22,34,.42);
+  --glass-line:rgba(255,255,255,.28);--glass-hi:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06);
+  --shadow-glass:0 40px 80px -24px rgba(0,0,0,.55);--blur:blur(22px) saturate(150%);
+  --on-glass:rgba(255,255,255,.72);--on-glass-2:rgba(255,255,255,.5);--on-glass-line:rgba(255,255,255,.32);--err-light:#FFB4A8;--tag-bg:rgba(16,22,34,.5);--blur-s:blur(10px);
+  --shade-card:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(23,30,42,.92) 100%);
+  --shadow-card:0 40px 80px -20px rgba(14,19,28,.45),0 2px 6px rgba(14,19,28,.08);
+  --tick-on:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --chev-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='white' stroke-width='1.4'/%3E%3C/svg%3E");
+  --tick-navy:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%232A3649' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%232A3649' stroke-width='1.4'/%3E%3C/svg%3E");
+  --shadow-lift:0 22px 44px rgba(14,19,28,.22);
+  --shadow-bar:0 4px 20px rgba(14,19,28,.18);
+  --on-dark-line:rgba(255,255,255,.22);--on-navy-glow:rgba(42,54,73,.45);--on-dark-line-2:rgba(255,255,255,.6);--on-dark-soft:rgba(255,255,255,.8);--on-dark-faint:rgba(255,255,255,.12);
+  --glint:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);
+
+  /* Type: Jost throughout. Headings in capitals, bold, as on their site */
+  --font:"Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --fs-eyebrow:.8125rem;           /* 13px */
+  --fs-btn:.8125rem;               /* 13px, capitals, tracked, as their buttons */
+  --fs-small:.875rem;              /* 14px */
+  --fs-label:.6875rem;             /* 11px, field labels in capitals */
+  --fs-note:.8125rem;
+  --fs-tag:.625rem;
+  --fs-strip:.875rem;            /* small capitals, as the brief asks */
+  --fs-quote:clamp(1.375rem,1rem + 1.3vw,2.125rem);
+  --track-label:.16em;
+  --fs-body:1.0625rem;             /* 17px */
+  --fs-lead:clamp(1.0625rem,.95rem + .45vw,1.25rem);
+  --fs-h3:1.125rem;
+  --fs-h3-l:clamp(1.25rem,1rem + .9vw,1.75rem);
+  --fs-h2:clamp(1.75rem,1.3rem + 1.7vw,2.75rem);
+  --fs-h1:clamp(2.125rem,1.2rem + 2.6vw,3.625rem);
+  --fs-hero:clamp(2.5rem,1.2rem + 3.6vw,4.5rem);
+  --fs-hero-a:clamp(1.375rem,.9rem + 1.5vw,2.375rem);
+  --fs-fs:clamp(2.75rem,1.2rem + 6vw,7.5rem);
+  --fs-inc:clamp(2.75rem,2rem + 2.5vw,4.5rem);
+  --fs-big:clamp(5rem,2.5rem + 8vw,10rem);
+  --fs-count:clamp(3rem,2rem + 4vw,5.5rem);
+  --fs-cat:clamp(1.25rem,.9rem + 1vw,1.75rem);
+  --lh-tight:1.06;--lh-head:1.12;--lh-body:1.6;
+  --track-head:.01em;
+  --track-eyebrow:.24em;           /* their wordmark's wide spacing */
+  --track-btn:.16em;
+  --track-strip:.2em;
+  --w-light:300;--w-reg:400;--w-med:500;--w-bold:600;
+
+  /* Space and layout */
+  --s-1:.25rem;--s-2:.5rem;--s-3:.75rem;--s-4:1rem;--s-5:1.5rem;--s-6:2rem;--s-7:3rem;--s-8:4rem;--s-9:6rem;--s-10:8rem;
+  --sec-y:clamp(4.5rem,3rem + 5vw,8rem);
+  --wrap:1240px;--gutter:clamp(1.25rem,.8rem + 2vw,2.5rem);
+  --measure:700px;--measure-text:62ch;
+  --radius:0px;                    /* square corners, as their buttons and panels */
+  --bar-h:64px;--bar-h-m:60px;
+  --hair:1px;--rule:2px;--ring:3px;--head-rule:56px;
+  --icon:40px;--arrow:18px;--dot:8px;--vs-w:56rem;--dot-v:clamp(.875rem,.6rem + .6vw,1.125rem);--tick:22px;--field-h:48px;--btn-h:52px;
+  --logo-h:52px;--logo-h-m:48px;--logo-h-bar:28px;--mark:96px;--mark-sm:44px;--mark-xl:min(70vw,640px);
+  --form-w:480px;--card-pad:clamp(1.5rem,1rem + 1.5vw,2.5rem);--ctl-h:2.75rem;--check:1.25rem;--seg-h:3px;--card-ratio:4/3;--cat-ratio:3/4;--band-h:clamp(22rem,16rem + 18vw,34rem);--cat-w:clamp(16rem,30vw,26rem);--map-w:30rem;--map-w-m:22rem;--tip-w:12rem;--tip-w-m:9rem;--hz-h:min(52vh,30rem);--hz-par:2rem;--hz-pad:max(var(--gutter),calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+
+  /* Motion */
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --t-fast:160ms;--t-mid:320ms;--t-slow:700ms;--t-reveal:900ms;--t-draw:1400ms;--t-hero:2200ms;--t-count:1600ms;--t-cycle:1400ms;
+  --stagger:70ms;--stagger-fit:80ms;--t-fit:500ms;--t-hold:9999s;--t-vs:1800ms;--stagger-dot:16ms;
+  --rise:28px;--lift:-6px;--zoom:1.06;--settle:1.08;--tilt:4deg;--pull:6px;--persp:900px;
+}

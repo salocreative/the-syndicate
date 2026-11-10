@@ -1,0 +1,34 @@
+/* Motion: load-ins, reveals, photo wipes, line drawing, counters, parallax, tilt and the magnetic pull.
+   Transform, opacity, clip-path and stroke only. Everything starts in its final state; only with sy-js on <html> is anything
+   hidden until it arrives. Reduced motion: the final state, nothing moves. */
+.sy-js [data-rv]{opacity:0;transform:translate3d(0,var(--rise),0);transition:opacity var(--t-reveal) var(--ease-out),transform var(--t-reveal) var(--ease-out);transition-delay:calc(var(--i,0) * var(--stagger))}
+.sy-js [data-rv].is-in{opacity:1;transform:none}
+.sy-js [data-rv="fade"]{transform:none}
+.sy-js [data-rv="left"]{transform:translate3d(calc(var(--rise) * -1),0,0)}
+.sy-js [data-rv="right"]{transform:translate3d(var(--rise),0,0)}
+.sy-js [data-rv="scale"]{transform:scale(.94)}
+/* Headline words rise one by one (motion.js splits them; a hidden full copy stays for screen readers) */
+.sy-split__w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.sy-split__i{display:inline-block;transform:translate3d(0,108%,0);transition:transform var(--t-reveal) var(--ease-out);transition-delay:calc(var(--i,0) * var(--stagger))}
+.is-in .sy-split__i{transform:none}
+/* Photos wipe up inside their frame, then settle from a slight zoom */
+.sy-js [data-rv-img]{clip-path:inset(100% 0 0 0);transition:clip-path var(--t-reveal) var(--ease-io);transition-delay:calc(var(--i,0) * var(--stagger))}
+.sy-js [data-rv-img] img{transform:scale(var(--settle));transition:transform var(--t-hero) var(--ease-out);transition-delay:calc(var(--i,0) * var(--stagger))}
+.sy-js [data-rv-img].is-in{clip-path:inset(0 0 0 0)}
+.sy-js [data-rv-img].is-in img{transform:none}
+/* Line drawing: every stroke in the icon draws itself in (pathLength="1" on each shape) */
+.sy-js [data-draw] :is(path,circle,ellipse,rect,line,polyline){stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--t-draw) var(--ease-io);transition-delay:calc(var(--i,0) * var(--stagger) + var(--t-mid))}
+.sy-js [data-draw].is-in :is(path,circle,ellipse,rect,line,polyline){stroke-dashoffset:0}
+/* Parallax and the turning watermark: motion.js sets --py and --spin as the section crosses the screen */
+[data-parallax]{transform:translate3d(0,var(--py,0),0) scale(var(--settle));will-change:transform}
+[data-ease]{translate:0 var(--ey,0);scale:1.12}
+/* Tilt: photos lean towards the pointer on a mouse */
+[data-tilt]{transform:perspective(var(--persp)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform var(--t-mid) var(--ease)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sy-js [data-rv],.sy-js [data-rv-img],.sy-js [data-rv-img] img,.sy-split__i{opacity:1;transform:none;clip-path:none;transition:none}
+  .sy-js [data-draw] :is(path,circle,ellipse,rect,line,polyline){stroke-dashoffset:0;transition:none}
+  [data-parallax],[data-tilt],.sy-water{transform:none}
+  [data-ease]{translate:none;scale:1}
+  *,*::before,*::after{transition-duration:0s !important;animation-duration:0s !important;animation-iteration-count:1 !important}
+}

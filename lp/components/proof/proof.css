@@ -1,0 +1,18 @@
+/* Proof (brief section 2): a single narrow static band directly under the hero, their black, course names in small
+   capitals separated by dots. Not a ticker: every name stays on screen; the line only drifts a few pixels with scroll.
+   Every name and dot shares one colour, size and weight. Then a single centred review, first name and source underneath. */
+.sy-proof{background:var(--white)}
+.sy-proof__strip{background:var(--black);color:var(--white);padding-block:var(--s-5);overflow:hidden}
+.sy-proof__names{text-align:center;font-size:var(--fs-strip);font-weight:var(--w-med);letter-spacing:var(--track-strip);text-transform:uppercase;line-height:2;text-wrap:balance;transform:translate3d(var(--sx,0),0,0)}
+.sy-proof__n{display:inline-block}
+.sy-proof__dot{display:inline-block;padding-inline:var(--s-2)}
+.sy-proof__review{position:relative;padding-block:var(--sec-y);text-align:center;max-width:calc(var(--measure) + var(--gutter) * 2)}
+.sy-proof__stars{display:inline-flex;gap:var(--s-1);color:var(--navy);margin-bottom:var(--s-5)}
+.sy-proof__stars svg{width:var(--tick);height:var(--tick);transform:scale(0);transition:transform var(--t-slow) var(--ease-out);transition-delay:calc(var(--i) * var(--stagger) + var(--t-mid))}
+.sy-proof__stars.is-in svg,html:not(.sy-js) .sy-proof__stars svg{transform:none}
+.sy-proof__quote{font-size:var(--fs-quote);line-height:1.4;font-weight:var(--w-light);text-wrap:balance}
+.sy-proof__quote .sy-split__i{transition-duration:var(--t-slow);transition-delay:calc(var(--i,0) * var(--stagger-dot) * 2)}
+.sy-proof__by{display:inline-flex;align-items:center;gap:var(--s-3);margin-top:var(--s-6);font-size:var(--fs-eyebrow);letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--n-500)}
+.sy-proof__name{color:var(--navy);font-weight:var(--w-bold)}
+.sy-proof__src::before{content:"";display:inline-block;width:var(--s-6);height:var(--hair);background:var(--n-300);vertical-align:middle;margin-right:var(--s-3)}
+@media (prefers-reduced-motion:reduce){.sy-proof__stars svg{transform:none}.sy-proof__names{transform:none}}

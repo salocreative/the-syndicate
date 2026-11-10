@@ -1,0 +1,9 @@
+{
+ "wrap": ".sy-wrap",
+ "slide": "[data-slide]",
+ "preload": "[data-preload]",
+ "cookie": "[data-cookie]",
+ "button": ".sy-btn",
+ "hiddenOk": [".sy-split__i",".sy-sr",".sy-bar"],
+ "churn": 60
+}

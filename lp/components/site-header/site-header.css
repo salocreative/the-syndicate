@@ -1,0 +1,14 @@
+/* Header: their stacked logo (ring mark and wordmark) top left, phone top right, nothing else clickable. Over the hero photo. */
+.sy-header{position:absolute;inset:0 0 auto;z-index:20;color:var(--white)}
+.sy-header__in{display:flex;align-items:center;justify-content:space-between;padding-block:var(--s-4);gap:var(--s-4);border-bottom:var(--hair) solid var(--on-dark-line)}
+.sy-header__logo img{height:var(--logo-h);width:auto}
+.sy-header__phone{display:inline-flex;align-items:center;gap:var(--s-3);color:var(--white);text-decoration:none;font-size:var(--fs-btn);font-weight:var(--w-med);letter-spacing:var(--track-btn);text-transform:uppercase;padding:var(--s-2) var(--s-4);border:var(--hair) solid var(--on-dark-line-2);transition:background-color var(--t-mid) var(--ease),color var(--t-mid) var(--ease)}
+.sy-header__icon{width:var(--arrow);height:var(--arrow)}
+.sy-header__call{display:none}
+@media (hover:hover){.sy-header__phone:hover{background:var(--white);color:var(--navy)}}
+@media (max-width:560px){
+  .sy-header__logo img{height:var(--logo-h-m)}
+  .sy-header__num{display:none}
+  .sy-header__call{display:inline}
+}
+.sy-js .sy-header [data-rv]:not(.is-in){transform:translate3d(0,calc(var(--rise) * -1),0)}

@@ -1,0 +1,24 @@
+/* One club, or over eighty: a centred text block on their cream, 700px wide, generous space and no photographs (brief).
+   Beneath it, the comparison side by side: the same grid of eighty squares twice. One club fills a single square;
+   The Syndicate fills all eighty. The second grid fills top to bottom once as it arrives (one clip-path, so it stays smooth)
+   while the count runs to 80, then stays. */
+.sy-compare{background:var(--cream);color:var(--navy)}
+.sy-compare__in{max-width:var(--wrap);text-align:center}
+.sy-compare__body{display:grid;gap:var(--s-4);margin:var(--s-6) auto 0;max-width:var(--measure);font-size:var(--fs-lead);color:var(--n-700);font-weight:var(--w-light)}
+.sy-vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;max-width:var(--vs-w);margin:var(--s-9) auto 0}
+.sy-vs__side{display:grid;justify-items:center;gap:var(--s-4);padding:var(--s-7) var(--s-6)}
+.sy-vs__side--one{background:var(--white)}
+.sy-vs__side--many{background:var(--navy);color:var(--white)}
+.sy-vs__num{font-size:var(--fs-big);line-height:.9;font-weight:var(--w-light);letter-spacing:-.03em}
+.sy-vs__side--one .sy-vs__num{color:var(--n-300)}
+.sy-vs__lab{font-size:var(--fs-label);font-weight:var(--w-med);letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--n-500)}
+.sy-vs__side--many .sy-vs__lab{color:var(--on-dark-soft)}
+.sy-vs__grid{display:grid;grid-template-columns:repeat(10,var(--dot-v));gap:var(--s-2);margin-top:var(--s-3)}
+.sy-vs__grid i{width:var(--dot-v);height:var(--dot-v);border:var(--hair) solid var(--n-200)}
+.sy-vs__side--one .sy-vs__grid i.on{background:var(--navy);border-color:var(--navy)}
+.sy-vs__side--many .sy-vs__grid i{border:0;background:var(--white)}
+.sy-vs__side--many .sy-vs__grid{clip-path:inset(0 0 0 0);transition:clip-path var(--t-vs) var(--ease-io) var(--t-mid)}
+.sy-js .sy-vs:not(.is-on) .sy-vs__side--many .sy-vs__grid{clip-path:inset(0 0 100% 0)}
+.sy-vs__or{display:grid;place-items:center;width:var(--s-9);font-size:var(--fs-label);font-weight:var(--w-med);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--n-500)}
+@media (max-width:760px){.sy-vs{grid-template-columns:minmax(0,1fr)}.sy-vs__or{width:auto;height:var(--s-8)}}
+@media (prefers-reduced-motion:reduce){.sy-js .sy-vs .sy-vs__side--many .sy-vs__grid{clip-path:none;transition:none}}

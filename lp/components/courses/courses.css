@@ -1,0 +1,77 @@
+/* The courses: heading and intro open a gallery of their photographs and film that moves sideways as you scroll down
+   (pinned on desktop, swipe on phones), then the brief's six cards three across.
+   Point at a card (or tap its photo) to flick through that course's photos; photos tilt towards the pointer. */
+.sy-courses{background:var(--navy)}
+.sy-courses__intro{margin:var(--s-5) 0 0;max-width:36ch;font-size:var(--fs-lead);color:var(--on-dark-soft)}
+.sy-courses__pause{position:absolute;z-index:2;right:var(--s-4);bottom:var(--s-4);display:inline-flex;align-items:center;gap:var(--s-2);background:transparent;border:var(--hair) solid var(--on-dark-line-2);color:var(--white);font-size:var(--fs-eyebrow);letter-spacing:var(--track-btn);text-transform:uppercase;padding:var(--s-2) var(--s-3);cursor:pointer}
+.sy-courses__pp{width:var(--s-3);height:var(--s-3);border-left:var(--ring) solid currentColor;border-right:var(--ring) solid currentColor}
+.sy-courses__pause[aria-pressed="true"] .sy-courses__pp{border-right:0;border-left:var(--s-3) solid currentColor;border-top:calc(var(--s-3) / 2) solid transparent;border-bottom:calc(var(--s-3) / 2) solid transparent;width:0;height:0}
+.sy-courses__body{padding-block:var(--sec-y)}
+.sy-courses__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-7) var(--s-5);padding:0}
+.sy-card{display:grid;grid-template-rows:auto 1fr;gap:var(--s-4)}
+.sy-card__ph{position:relative;aspect-ratio:var(--card-ratio);overflow:hidden;background:var(--navy-2)}
+.sy-card__stack{position:absolute;inset:0}
+.sy-card__stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(var(--zoom));transition:opacity var(--t-slow) var(--ease),transform var(--t-hero) var(--ease-out)}
+.sy-card__stack img.is-on{opacity:1;transform:none}
+.sy-card__next{position:absolute;inset:0;border:0;background:transparent;padding:0;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start}
+.sy-card__dots{display:flex;gap:var(--s-1);padding:var(--s-3)}
+.sy-card__dots i{width:var(--s-4);height:var(--rule);background:var(--on-dark-line-2);transition:background-color var(--t-mid) var(--ease),width var(--t-mid) var(--ease)}
+.sy-card__dots i.is-on{background:var(--white);width:var(--s-6)}
+.sy-card__ph::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--shade-card);opacity:.55}
+.sy-card__next{z-index:2}
+.sy-card__body{display:flex;flex-direction:column;gap:var(--s-3);color:var(--on-dark-soft);font-size:var(--fs-small);line-height:1.65}
+.sy-card__name{position:relative;justify-self:start;font-size:var(--fs-h3);font-weight:var(--w-bold);color:var(--white);text-transform:uppercase;letter-spacing:.1em;padding-bottom:var(--s-2)}
+.sy-card__name::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:var(--hair);background:var(--white);transform-origin:left;transform:scaleX(.18);transition:transform var(--t-slow) var(--ease-out)}
+.sy-card__meta{min-height:var(--s-5)}   /* the brief keeps this line for county and yardage, filled once the client verifies them */
+@media (max-width:900px){.sy-courses__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.sy-courses__grid{grid-template-columns:minmax(0,1fr)}}
+/* Horizontal gallery: the heading sits still at the top while a row of framed photographs (and the film) travels
+   sideways beneath it as you scroll down. Framed, not full screen. Pinned on desktop (one transform per frame), each photo
+   drifting gently inside its frame; a swipe on phones. */
+.sy-hz{position:relative;background:var(--navy-deep);color:var(--white)}
+.sy-hz__pin{position:relative;display:grid;align-content:center;gap:var(--s-7);padding-block:var(--s-9)}
+.sy-hz__head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s-7)}
+.sy-hz__head .sy-mark{margin:0 0 var(--s-5)}
+.sy-hz__head .sy-courses__intro{margin:0;max-width:30ch;text-align:right}
+.sy-hz__view{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:var(--hz-pad);scrollbar-width:none}
+.sy-hz__view::-webkit-scrollbar{display:none}
+.sy-hz__track{display:flex;align-items:flex-start;gap:var(--s-5);padding-inline:var(--hz-pad);width:max-content;transform:translate3d(var(--tx,0),0,0);will-change:transform}
+.sy-hz__item{flex:none;margin:0;display:grid;gap:var(--s-3);scroll-snap-align:start}
+.sy-hz__ph{position:relative;overflow:hidden;background:var(--navy-2);height:var(--hz-h)}
+.sy-hz__item--tall .sy-hz__ph{aspect-ratio:4/5}
+.sy-hz__item--wide .sy-hz__ph,.sy-hz__item--film .sy-hz__ph{aspect-ratio:3/2}
+.sy-hz__ph img,.sy-hz__ph video{position:absolute;top:0;left:calc(var(--hz-par) * -1);width:calc(100% + var(--hz-par) * 2);max-width:none;height:100%;object-fit:cover;translate:var(--hx,0) 0}
+.sy-hz__tag{position:absolute;z-index:2;left:var(--s-4);bottom:var(--s-4);display:flex;align-items:center;gap:var(--s-3);padding:var(--s-2) var(--s-3);background:var(--tag-bg);-webkit-backdrop-filter:var(--blur-s);backdrop-filter:var(--blur-s);font-size:var(--fs-label);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--white)}
+.sy-hz__tag b{font-weight:var(--w-bold)}
+.sy-hz__tag span{color:var(--on-dark-soft)}
+.sy-hz__tag span::before{content:"";display:inline-block;width:var(--hair);height:var(--s-3);margin-right:var(--s-3);background:var(--on-dark-line-2);vertical-align:middle}
+.sy-hz .sy-courses__pause{position:absolute;right:var(--s-4);bottom:var(--s-4)}
+.sy-hz__foot{display:none}
+.sy-hz.is-pinned .sy-hz__pin{position:sticky;top:0;height:100vh;padding-block:calc(var(--bar-h) + var(--s-6)) var(--s-7)}
+.sy-hz.is-pinned .sy-hz__view{overflow:hidden;scroll-snap-type:none}
+.sy-hz.is-pinned .sy-hz__foot{display:block}
+.sy-hz__bar{display:block;position:relative;height:var(--hair);background:var(--on-dark-line)}
+.sy-hz__bar i{position:absolute;inset:0;background:var(--white);transform-origin:left;transform:scaleX(var(--hp,0))}
+@media (max-width:900px){.sy-hz__head{display:block}.sy-hz__head .sy-courses__intro{text-align:left;margin-top:var(--s-4)}.sy-hz__pin{padding-block:var(--s-8)}}
+@media (prefers-reduced-motion:reduce){.sy-hz__ph img{translate:none}}
+/* Cards: each photo eases inside its frame as the page scrolls */
+.sy-card__stack{scale:1.08;translate:0 var(--py,0);transition:scale var(--t-hero) var(--ease-out)}
+@media (hover:hover){.sy-card:hover .sy-card__stack{scale:1.16}}
+@media (prefers-reduced-motion:reduce){.sy-card__stack{scale:1;translate:none}}
+
+
+/* The access guide: its own white band below the cards, the brief's line and the one button down to the form */
+.sy-guide{background:var(--white);color:var(--navy);padding-block:var(--s-8)}
+.sy-guide__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-7)}
+.sy-guide__line{font-size:var(--fs-h3-l);line-height:1.35;font-weight:var(--w-light);max-width:34ch}
+.sy-guide__line .sy-link{font-weight:var(--w-med)}
+@media (max-width:760px){.sy-guide__in{flex-direction:column;align-items:flex-start}}
+/* Card details: location and course type as tags, then par and length */
+.sy-card__tags{display:flex;flex-wrap:wrap;gap:var(--s-1);margin:0;padding:0;list-style:none}
+.sy-card__tags li{padding:var(--s-1) var(--s-2);background:var(--tag-bg);-webkit-backdrop-filter:var(--blur-s);backdrop-filter:var(--blur-s);font-size:var(--fs-tag);font-weight:var(--w-med);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--white)}
+.sy-card__tags--on{position:absolute;z-index:2;top:var(--s-3);left:var(--s-3);right:var(--s-3);pointer-events:none}
+.sy-card__stats{display:flex;gap:var(--s-4);margin:auto 0 0;padding-top:var(--s-3);border-top:var(--hair) solid var(--on-dark-line)}
+.sy-card__stats div{display:flex;align-items:baseline;gap:var(--s-2)}
+.sy-card__stats div+div{padding-left:var(--s-4);border-left:var(--hair) solid var(--on-dark-line)}
+.sy-card__stats dt{font-size:var(--fs-label);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--n-300)}
+.sy-card__stats dd{margin:0;font-size:var(--fs-small);font-weight:var(--w-reg);color:var(--white)}

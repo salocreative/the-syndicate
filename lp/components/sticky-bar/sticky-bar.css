@@ -1,0 +1,26 @@
+/* Sticky bar: appears once the hero has scrolled away, hides while the final form is on screen.
+   Desktop: thin top bar. Mobile: full-width bottom bar split into Call and Enquire. No modal, no back-to-top. */
+.sy-bar{position:fixed;inset:0 0 auto;z-index:30;background:var(--navy);color:var(--white);box-shadow:var(--shadow-bar);transform:translate3d(0,-110%,0);transition:transform var(--t-mid) var(--ease)}
+.sy-bar.is-on{transform:none}
+.sy-bar__in{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);min-height:var(--bar-h)}
+.sy-bar__logo{height:var(--logo-h-bar);width:auto}
+.sy-bar__actions{display:flex;align-items:center;gap:var(--s-5)}
+.sy-bar__call{display:inline-flex;align-items:center;gap:var(--s-2);color:var(--white);text-decoration:none;font-weight:var(--w-med);font-size:var(--fs-btn);letter-spacing:var(--track-btn);text-transform:uppercase}
+.sy-bar__icon{width:var(--arrow);height:var(--arrow)}
+.sy-bar__cta{min-height:calc(var(--bar-h) - var(--s-4));padding:0 var(--s-5);font-size:var(--fs-small)}
+.sy-bar__short{display:none}
+.sy-bar__progress{position:absolute;left:0;right:0;bottom:0;height:var(--rule);background:var(--white);transform-origin:left;transform:scaleX(var(--p,0))}
+@media (hover:hover){.sy-bar__call:hover .sy-bar__num{text-decoration:underline;text-underline-offset:.25em}}
+@media (max-width:720px){
+  .sy-bar{inset:auto 0 0;transform:translate3d(0,110%,0);padding-bottom:env(safe-area-inset-bottom)}
+  .sy-bar.is-on{transform:none}
+  .sy-bar .sy-wrap{padding:0}
+  .sy-bar__in{min-height:var(--bar-h-m)}
+  .sy-bar__logo{display:none}
+  .sy-bar__actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;width:100%;align-self:stretch}
+  .sy-bar__call,.sy-bar__cta{justify-content:center;min-height:var(--bar-h-m);border-radius:calc(var(--radius) * 0);font-size:var(--fs-body)}
+  .sy-bar__call{border-right:var(--hair) solid var(--navy-2)}
+  .sy-bar__progress{top:0;bottom:auto}
+  .sy-bar__num,.sy-bar__long{display:none}
+  .sy-bar__short{display:inline}
+}

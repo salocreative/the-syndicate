@@ -1,0 +1,13 @@
+/* Final call to action: full-width dark band, course photo behind, the same form centred */
+.sy-final{position:relative;isolation:isolate;overflow:clip;color:var(--white);background:var(--navy);padding-block:var(--sec-y)}
+.sy-final__bg{position:absolute;inset:0;z-index:-2}
+.sy-final__bg img,.sy-final__bg source{width:100%;height:100%;object-fit:cover}
+.sy-final::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--shade-band)}
+.sy-final__in{max-width:calc(var(--form-w) * 1.35 + var(--gutter) * 2);text-align:center}
+.sy-final__line{margin-top:var(--s-5);font-size:var(--fs-lead);color:var(--on-dark-soft)}
+.sy-final__water{left:-18%;bottom:-30%;opacity:.06}
+.sy-final__form{margin-top:var(--s-7);text-align:left;scroll-margin-top:calc(var(--bar-h) + var(--s-4))}
+.sy-final__alt{margin-top:var(--s-5)}
+.sy-final__alt{font-size:var(--fs-small);letter-spacing:var(--track-btn);text-transform:uppercase}
+.sy-final__alt a{color:var(--white);font-weight:var(--w-med);text-underline-offset:.3em}
+@media (max-width:720px){.sy-final__water{display:none}}

@@ -1,0 +1,65 @@
+<section class="sy-hero" data-load data-section="hero" data-label="Hero and enquiry form">
+  <div class="sy-hero__bg" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 719px)" data-phone="site-images/hero/course-sunrise.webp">
+      <img class="sy-hero__img" src="../site-images/hero/course-sunrise.webp" alt="" width="2400" height="1348" fetchpriority="high" data-parallax=".12" data-edit="hero-photo">
+    </picture>
+  </div>
+  <div class="sy-wrap sy-hero__grid">
+    <div class="sy-hero__copy">
+      <p class="sy-hero__eyebrow" data-rv="fade" style="--i:0" data-edit="hero-eyebrow">Multi-course golf membership in the UK</p>
+      <h1 class="sy-hero__title" data-split-words data-edit="hero-title"><b>Play over 80 of Britain's finest private courses</b> <span>on one membership</span></h1>
+      <p class="sy-hero__sub" data-rv style="--i:10" data-edit="hero-sub">One annual fee. Unlimited complimentary weekday golf across championship links, heathland classics and parkland estates, with a private concierge to book every tee time for you.</p>
+      <ul class="sy-hero__ticks" role="list">
+        <li data-rv style="--i:11"><svg class="sy-hero__tick" aria-hidden="true"><use href="#i-tick"/></svg><span data-edit="hero-tick-1">No green fees at partner clubs</span></li>
+        <li data-rv style="--i:12"><svg class="sy-hero__tick" aria-hidden="true"><use href="#i-tick"/></svg><span data-edit="hero-tick-2">Bring up to three guests, every round</span></li>
+        <li data-rv style="--i:13"><svg class="sy-hero__tick" aria-hidden="true"><use href="#i-tick"/></svg><span data-edit="hero-tick-3">Keep your existing club membership</span></li>
+      </ul>
+    </div>
+    <div class="sy-hero__form" data-rv="right" style="--i:6">
+<!--@form-->
+<form class="sy-form sy-form--headed" data-form action="/thank-you" novalidate aria-labelledby="hf-head" data-edit="hf-form">
+  <div class="sy-form__seg" aria-hidden="true"><i></i><i></i></div>
+  <div class="sy-form__top">
+    <h2 class="sy-form__head" id="hf-head" data-edit="hf-form-head">Request membership details</h2>
+    <p class="sy-form__intro" data-edit="hf-form-intro">Two minutes to complete. You can download our Membership and Course Access Guide as soon as you submit, and we will come back to you within one working day.</p>
+  </div>
+  <div class="sy-form__body">
+  <p class="sy-sr" aria-live="polite" data-step-label>Step 1 of 2</p>
+  <div class="sy-step" data-step-panel="1">
+    <div class="sy-form__grid">
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-first">First name</label><span class="sy-ctl"><input id="hf-first" name="first_name" autocomplete="given-name" required aria-describedby="hf-first-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-first-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-last">Last name</label><span class="sy-ctl"><input id="hf-last" name="last_name" autocomplete="family-name" required aria-describedby="hf-last-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-last-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-email">Email</label><span class="sy-ctl"><input id="hf-email" name="email" type="email" autocomplete="email" required aria-describedby="hf-email-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-email-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-mobile">Mobile</label><span class="sy-ctl"><input id="hf-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="hf-mobile-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-mobile-e" hidden></span></div>
+    </div>
+    <div class="sy-form__actions">
+      <button class="sy-btn sy-btn--light sy-btn--block sy-form__go" type="button" data-next>Continue<svg class="sy-btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+  <div class="sy-step" data-step-panel="2">
+    <div class="sy-form__grid">
+      <div class="sy-field sy-field--full" data-field><fieldset class="sy-radios" aria-describedby="hf-hcp-e"><legend class="sy-field__label">Do you hold an official playing handicap?</legend>
+        <div class="sy-radios__set"><label class="sy-radio"><input type="radio" name="handicap" value="Yes" required><span>Yes</span></label><label class="sy-radio"><input type="radio" name="handicap" value="No"><span>No</span></label><label class="sy-radio"><input type="radio" name="handicap" value="Applying for one"><span>Applying for one</span></label></div>
+      </fieldset><span class="sy-field__err" id="hf-hcp-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-rounds">Roughly how many rounds do you play a year?</label><span class="sy-ctl"><select id="hf-rounds" name="rounds" required aria-describedby="hf-rounds-e"><option value="">Choose</option><option>Under 15</option><option>15 to 30</option><option>30 to 50</option><option>Over 50</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-rounds-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-budget">What annual budget do you have in mind for a golf membership?</label><span class="sy-ctl"><select id="hf-budget" name="budget" required aria-describedby="hf-budget-e"><option value="">Choose</option><option>Under £2,000</option><option>£2,000 to £4,000</option><option>£4,000 to £7,000</option><option>Over £7,000</option><option>Prefer to discuss</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-budget-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-where">Where are you based?</label><span class="sy-ctl"><input id="hf-where" name="location" required placeholder="Postcode or nearest town" aria-describedby="hf-where-e"><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" id="hf-where-e" hidden></span></div>
+      <div class="sy-field" data-field><label class="sy-field__label" for="hf-cat">Which membership interests you? <span class="sy-field__opt">Optional</span></label><span class="sy-ctl"><select id="hf-cat" name="membership"><option value="">Choose</option><option>Full</option><option>Country</option><option>Overseas</option><option>Corporate</option><option>Not sure yet</option></select><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" hidden></span></div>
+      <div class="sy-field sy-field--full" data-field><label class="sy-field__label" for="hf-more">Anything else we should know? <span class="sy-field__opt">Optional</span></label><span class="sy-ctl"><textarea id="hf-more" name="notes" rows="2" maxlength="300"></textarea><i class="sy-ctl__line" aria-hidden="true"></i></span><span class="sy-field__err" hidden></span></div>
+      <div class="sy-field sy-field--full" data-field><label class="sy-check"><input type="checkbox" name="consent" value="yes" required aria-describedby="hf-consent-e"><span>I am happy for The Syndicate Club to contact me about membership. <a href="https://www.thesyndicateclub.co.uk/privacypolicy" target="_blank" rel="noopener">Privacy policy</a></span></label><span class="sy-field__err" id="hf-consent-e" hidden></span></div>
+    </div>
+    <input type="hidden" name="gclid"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="landing_page"><input type="hidden" name="referrer">
+    <div class="sy-form__actions">
+      <button class="sy-btn sy-btn--light sy-btn--block sy-form__go" type="submit">Send my enquiry<svg class="sy-btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="sy-form__back" type="button" data-back><svg class="sy-form__back-i" aria-hidden="true"><use href="#i-arrow"/></svg>Back to step 1</button>
+    </div>
+  </div>
+  <p class="sy-form__note" data-edit="hf-form-note">No obligation. Your details are never passed to anyone else.</p>
+  </div>
+</form>
+<!--@/form-->
+    </div>
+  </div>
+  <a class="sy-hero__cue" href="#proof" aria-label="Scroll to the courses" data-rv="fade" style="--i:20"><span></span></a>
+</section>
